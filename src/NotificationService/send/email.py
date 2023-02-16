@@ -5,8 +5,8 @@ from email.message import EmailMessage
 def notification(message):
     message = json.loads(message)
     mp3_fid = message["mp3_fid"]
-    sender_address = os.environ.get("GMAIL_ADDRESS")
-    sender_password = os.environ.get("GMAIL_PASSWORD")
+    # sender_address = os.environ.get("GMAIL_ADDRESS")
+    # sender_password = os.environ.get("GMAIL_PASSWORD")
     receiver_address = message["username"]
 
     # msg = EmailMessage()
@@ -21,4 +21,4 @@ def notification(message):
     # session.send_message(msg, sender_address, receiver_address)
     # session.quit()
     print("Mail Sent")
-    print(f"Mp3 id is - {message['mp3_fid']}")
+    print(f"User - {receiver_address} received mp3 id - {mp3_fid}")
